@@ -2,7 +2,6 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-#### CUSTOM VARIABLES
 export anime="cd /home/netsu/Documents/Anime/"
 export code="cd /home/netsu/Documents/Code/"
 export cpp="cd /home/netsu/Documents/Code/C++"
@@ -24,8 +23,6 @@ export work="cd /home/netsu/Documents/Work"
 export goles="cd /home/netsu/Documents/Code/Go/lessons/src/githib.com/weebnetsu"
 export go="cd /home/netsu/Documents/Code/Go"
 export flutter="cd /home/netsu/Documents/Code/Dart/Flutter/FUN/"
-
-#### TERMINAL DESIGN
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -105,8 +102,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-#### Command Configs
-
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -132,13 +127,10 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-#### Terminal startup output
 df -h /
 
 echo -ne "\n\t\t\t\t\t\t\t"
 date
-
-#### PATH variable updates
 
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.nimble/bin:$PATH"
@@ -146,8 +138,8 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/home/netsu/.cache/paru/clone/distrobox/pkg/distrobox/usr/bin
 export BROWSER='/usr/bin/vivaldi-stable'
+export PATH=$PATH:/home/netsu/.local/share/gem/ruby/3.0.0/bin
 
-#### Aliases
 alias img=sxiv
 alias mplayer='mplayer -lavdopts threads=4 -aspect 16:9'
 alias dj='python manage.py'
@@ -174,15 +166,10 @@ alias refresh="source ~/.bashrc"
 alias venvstart="source venv/bin/activate"
 alias intellij="~/bin/idea-IC-222.4345.14/bin/idea.sh"
 alias idea="~/bin/idea-IC-222.4345.14/bin/idea.sh"
-alias darch="distrobox enter archlinux"
+alias dubuntu="distrobox enter --root ubuntu"
 alias code.="code ."
-alias bat="batcat"
-# make display less dim
-alias screenup="sudo brightnessctl set +10%"
-# dim display more
-alias screendown="sudo brightnessctl set 10%-"
-alias sound="alsamixer"
-alias apt-get="apt"
+alias c="code ."
+alias fbuild="flutter clean && flutter pub get && flutter build apk --release"
 
 # replace "code ," with "code ."
 code() {
@@ -193,13 +180,11 @@ code() {
     fi
 }
 
-#### Everything I can't be bothered with
-
+eval `luarocks path --bin` # exports lua paths so we can use installed libraries
 export PATH="$HOME/bin:$PATH"
 export ANDROID_HOME=$HOME/Android/Sdk
 export ANDROID_SDK_ROOT=$HOME/Android/Sdk
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
-export PATH=$PATH:$JAVA_HOME/bin
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 [ -f "/home/netsu/.ghcup/env" ] && source "/home/netsu/.ghcup/env" # ghcup-env
@@ -208,11 +193,29 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH="$HOME/bin:$PATH"
 export PATH=/home/netsu/.meteor:$PATH
 export PATH=$PATH:~/.local/bin
-export PATH=$PATH:~/flutter/bin
-export PATH=$PATH:/usr/local/bin
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+# __conda_setup="$('/home/netsu/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/home/netsu/miniconda3/etc/profile.d/conda.sh" ]; then
+#         . "/home/netsu/miniconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/home/netsu/miniconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
+# <<< conda initialize <<<
+
+. /opt/asdf-vm/asdf.sh
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-eval $(luarocks path)
+export PATH=/home/netsu/.nimble/bin:$PATH
