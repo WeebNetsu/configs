@@ -35,8 +35,8 @@ HISTCONTROL=ignoredups:ignorespace
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=5000
+HISTFILESIZE=5000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -137,28 +137,29 @@ export PATH="$HOME/.nimble/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/home/netsu/.cache/paru/clone/distrobox/pkg/distrobox/usr/bin
-export BROWSER='/usr/bin/vivaldi-stable'
 export PATH=$PATH:/home/netsu/.local/share/gem/ruby/3.0.0/bin
+export PATH=$PATH:/home/netsu/Documents/fluttersdk/flutter
 
+alias startdroidcam="sudo /home/netsu/android-sdk/platform-tools/adb start-server && sudo modprobe v4l2loopback"
 alias img=sxiv
+alias restartpanel="tint2 &"
+alias imgai="~/bin/easy-diffusion/start.sh"
+alias ai="~/bin/LM-Studio.AppImage"
 alias mplayer='mplayer -lavdopts threads=4 -aspect 16:9'
 alias dj='python manage.py'
 alias cpile='g++ main.cpp -o output && ./output'
 alias frun='export FLASK_DEBUG=true && flask run'
 alias workblock="export NODE_ENV=test && export PORT=5000 && nodemon"
-alias docker="sudo docker"
-alias kdenlive="$HOME/Documents/kdenlive/kdenlive-21.08.3-x86_64.appimage"
+alias macos="docker start strange_newton"
+alias kdenlive="$HOME/Documents/kdenlive/kdenlive-24.12.3-x86_64.AppImage"
 alias webstorm="$HOME/WebStorm-213.6777.57/bin/webstorm.sh"
 # below will allow to play youtube videos in 720p (change format to 18 for 360p)
 alias ympv="mpv --script-opts=ytdl_hook-ytdl_path=/usr/bin/yt-dlp --ytdl-format=22"
-# alias ympv='mpv --script-opts=ytdl_hook-ytdl_path=/usr/local/bin/yt-dlp --ytdl-format="bestvideo[ext=mp4][height<=?720][fps<=30]"'
 alias singlemonitor="xrandr --output DVI-I-0 --off --output DVI-I-1 --off --output HDMI-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-0 --off --output DP-1 --off --output DP-2 --off --output DP-3 --off --output DP-4 --off --output DP-5 --off"
 alias multimonitor="xrandr --output DisplayPort-0 --mode 1360x768 --pos 1920x312 --rotate normal --output HDMI-A-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-A-1 --off --output HDMI-A-2 --off"
-alias androidstudio="$HOME/bin/android-studio/bin/studio.sh"
 alias fixperms="chmod 755 *"
 alias fast="uvicorn main:app --reload"
 alias bottle="flatpak run com.usebottles.bottles"
-alias flutter="$HOME/flutter/bin/flutter"
 alias startvirt="sudo virsh net-start default"
 alias refresh="source ~/.bashrc"
 alias venvstart="source venv/bin/activate"
@@ -168,6 +169,12 @@ alias dubuntu="distrobox enter --root ubuntu"
 alias code.="code ."
 alias c="code ."
 alias fbuild="flutter clean && flutter pub get && flutter build apk --release"
+alias mine="sudo ~/bin/xmrig/xmrig"
+alias podcast="~/bin/obsidian.AppImage"
+alias p="podcast"
+alias augustus="/home/netsu/.local/share/Steam/steamapps/common/Caesar\ 3/C3/augustus.AppImage"
+alias n="nitrogen --restore &"
+alias godot="~/bin/godot/godot.x86_64"
 
 # replace "code ," with "code ."
 code() {
@@ -178,42 +185,34 @@ code() {
     fi
 }
 
-eval `luarocks path --bin` # exports lua paths so we can use installed libraries
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 export PATH="$HOME/bin:$PATH"
-export ANDROID_HOME=$HOME/Android/Sdk
-export ANDROID_SDK_ROOT=$HOME/Android/Sdk
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/platform-tools
 [ -f "/home/netsu/.ghcup/env" ] && source "/home/netsu/.ghcup/env" # ghcup-env
-# . "$HOME/.cargo/env"
+export CHROME_EXECUTABLE=/usr/bin/chromium
 
 export PATH="$HOME/bin:$PATH"
 export PATH=/home/netsu/.meteor:$PATH
 export PATH=$PATH:~/.local/bin
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-# __conda_setup="$('/home/netsu/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-# if [ $? -eq 0 ]; then
-#     eval "$__conda_setup"
-# else
-#     if [ -f "/home/netsu/miniconda3/etc/profile.d/conda.sh" ]; then
-#         . "/home/netsu/miniconda3/etc/profile.d/conda.sh"
-#     else
-#         export PATH="/home/netsu/miniconda3/bin:$PATH"
-#     fi
-# fi
-# unset __conda_setup
-# <<< conda initialize <<<
-
-. /opt/asdf-vm/asdf.sh
-
-# Load Angular CLI autocompletion.
-source <(ng completion script)
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 export PATH=/home/netsu/.nimble/bin:$PATH
+export PATH="$PATH":"$HOME/.pub-cache/bin"
+export PATH="$PATH":"$CARGO_HOME/bin/"
+export PATH="$PATH":"$HOME/.cargo/bin/"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/netsu/.lmstudio/bin"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+xset -dpms
+xset s off
+
+# pnpm
+export PNPM_HOME="/home/netsu/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
