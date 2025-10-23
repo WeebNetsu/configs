@@ -2,27 +2,27 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-export anime="cd /home/netsu/Documents/Anime/"
-export code="cd /home/netsu/Documents/Code/"
-export cpp="cd /home/netsu/Documents/Code/C++"
-export cppfun="cd /home/netsu/Documents/Code/C++/Fun"
-export nim="cd /home/netsu/Documents/Code/Nim"
-export nimfun="cd /home/netsu/Documents/Code/Nim/FUN"
-export js="cd /home/netsu/Documents/Code/HTML-CSS-JS/JavaScript"
-export jslib="cd /home/netsu/Documents/Code/HTML-CSS-JS/JavaScript/Libraries"
-export py="cd /home/netsu/Documents/Code/Python"
-export pylib="cd /home/netsu/Documents/Code/Python/Libraries"
-export pyfun="cd /home/netsu/Documents/Code/Python/Fun"
-export lua="cd /home/netsu/Documents/Code/Lua"
-export luafun="cd /home/netsu/Documents/Code/Lua/Fun"
-export web="cd /home/netsu/Documents/Code/HTML-CSS-JS/Webpages"
-export yt="cd /home/netsu/Documents/YouTube"
+export anime="cd $HOME/Documents/Anime/"
+export code="cd $HOME/Documents/Code/"
+export cpp="cd $HOME/Documents/Code/C++"
+export cppfun="cd $HOME/Documents/Code/C++/Fun"
+export nim="cd $HOME/Documents/Code/Nim"
+export nimfun="cd $HOME/Documents/Code/Nim/FUN"
+export js="cd $HOME/Documents/Code/HTML-CSS-JS/JavaScript"
+export jslib="cd $HOME/Documents/Code/HTML-CSS-JS/JavaScript/Libraries"
+export py="cd $HOME/Documents/Code/Python"
+export pylib="cd $HOME/Documents/Code/Python/Libraries"
+export pyfun="cd $HOME/Documents/Code/Python/Fun"
+export lua="cd $HOME/Documents/Code/Lua"
+export luafun="cd $HOME/Documents/Code/Lua/Fun"
+export web="cd $HOME/Documents/Code/HTML-CSS-JS/Webpages"
+export yt="cd $HOME/Documents/YouTube"
 export windows="cd /mnt/9A46DF2646DF0245/Users/onefa/Documents/"
 export win="cd /mnt/9A46DF2646DF0245/Users/onefa/Documents/"
-export work="cd /home/netsu/Documents/Work"   
-export goles="cd /home/netsu/Documents/Code/Go/lessons/src/githib.com/weebnetsu"
-export go="cd /home/netsu/Documents/Code/Go"
-export flutter="cd /home/netsu/Documents/Code/Dart/Flutter/FUN/"
+export work="cd $HOME/Documents/Work"   
+export goles="cd $HOME/Documents/Code/Go/lessons/src/githib.com/weebnetsu"
+export go="cd $HOME/Documents/Code/Go"
+export flutter="cd $HOME/Documents/Code/Dart/Flutter/FUN/"
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -136,11 +136,11 @@ export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.nimble/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:/home/netsu/.cache/paru/clone/distrobox/pkg/distrobox/usr/bin
-export PATH=$PATH:/home/netsu/.local/share/gem/ruby/3.0.0/bin
-export PATH=$PATH:/home/netsu/Documents/fluttersdk/flutter
+export PATH=$PATH:$HOME/.cache/paru/clone/distrobox/pkg/distrobox/usr/bin
+export PATH=$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin
+export PATH=$PATH:$HOME/Documents/fluttersdk/flutter
 
-alias startdroidcam="sudo /home/netsu/android-sdk/platform-tools/adb start-server && sudo modprobe v4l2loopback"
+alias startdroidcam="sudo $HOME/android-sdk/platform-tools/adb start-server && sudo modprobe v4l2loopback"
 alias img=sxiv
 alias restartpanel="tint2 &"
 alias imgai="~/bin/easy-diffusion/start.sh"
@@ -172,9 +172,10 @@ alias fbuild="flutter clean && flutter pub get && flutter build apk --release"
 alias mine="sudo ~/bin/xmrig/xmrig"
 alias podcast="~/bin/obsidian.AppImage"
 alias p="podcast"
-alias augustus="/home/netsu/.local/share/Steam/steamapps/common/Caesar\ 3/C3/augustus.AppImage"
+alias augustus="$HOME/.local/share/Steam/steamapps/common/Caesar\ 3/C3/augustus.AppImage"
 alias n="nitrogen --restore &"
 alias godot="~/bin/godot/godot.x86_64"
+alias develop="code meetingpal;code meetingpal-api;code meetingpal-fe"
 
 # replace "code ," with "code ."
 code() {
@@ -187,30 +188,30 @@ code() {
 
 export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 export PATH="$HOME/bin:$PATH"
-[ -f "/home/netsu/.ghcup/env" ] && source "/home/netsu/.ghcup/env" # ghcup-env
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
 export CHROME_EXECUTABLE=/usr/bin/chromium
 
 export PATH="$HOME/bin:$PATH"
-export PATH=/home/netsu/.meteor:$PATH
+export PATH=$HOME/.meteor:$PATH
 export PATH=$PATH:~/.local/bin
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
-export PATH=/home/netsu/.nimble/bin:$PATH
+export PATH=$HOME/.nimble/bin:$PATH
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 export PATH="$PATH":"$CARGO_HOME/bin/"
 export PATH="$PATH":"$HOME/.cargo/bin/"
 
 # Added by LM Studio CLI (lms)
-export PATH="$PATH:/home/netsu/.lmstudio/bin"
+export PATH="$PATH:$HOME/.lmstudio/bin"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 xset -dpms
 xset s off
 
 # pnpm
-export PNPM_HOME="/home/netsu/.local/share/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;

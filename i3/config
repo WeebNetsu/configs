@@ -419,7 +419,7 @@ exec --no-startup-id nm-applet
 
 # set wallpaper
 exec --no-startup-id nitrogen --restore
-exec --no-startup-id tint2
+exec --no-startup-id polybar
 #exec --no-startup-id feh --bg-fill /usr/share/endeavouros/backgrounds/endeavouros_i3.png
 
 # Remove NVIDIA screen tearing!
@@ -556,7 +556,7 @@ bindsym $mod+d exec rofi -show drun -theme ~/.config/rofi/launchers/type-4/style
 # justs disable ctrl+q & ctrl+shift+w so it doesn't close windows
 bindsym Control+q exec echo "lol"
 bindsym Control+Shift+w exec echo "lol"
-bindsym $mod+Shift+t exec tint2
+bindsym $mod+Shift+t exec polybar
 
 #bindsym F9 exec rofi -modi drun -show drun \
 #		-config ~/.config/rofi/rofidmenu.rasi
