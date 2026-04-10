@@ -1,0 +1,8 @@
+[Nemo Action]
+Active=true
+Name=Open in XFCE Terminal
+Comment=Open xfce4-terminal in the current directory
+Exec=xfce4-terminal --working-directory=%P
+Icon-Name=utilities-terminal
+Selection=none
+Extensions=dir;
