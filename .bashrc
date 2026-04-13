@@ -139,19 +139,22 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/.cache/paru/clone/distrobox/pkg/distrobox/usr/bin
 export PATH=$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin
 export PATH=$PATH:$HOME/Documents/fluttersdk/flutter
+export PATH=$PATH:$HOME/.npm-global/bin
 
 alias startdroidcam="sudo $HOME/android-sdk/platform-tools/adb start-server && sudo modprobe v4l2loopback"
 alias img=sxiv
 alias restartpanel="tint2 &"
 alias imgai="~/bin/easy-diffusion/start.sh"
+alias comfyai="comfy launch"
 alias ai="~/bin/LM-Studio.AppImage"
+alias cinny="~/bin/cinny.AppImage"
 alias mplayer='mplayer -lavdopts threads=4 -aspect 16:9'
 alias dj='python manage.py'
 alias cpile='g++ main.cpp -o output && ./output'
 alias frun='export FLASK_DEBUG=true && flask run'
 alias workblock="export NODE_ENV=test && export PORT=5000 && nodemon"
 alias macos="docker start strange_newton"
-alias kdenlive="$HOME/Documents/kdenlive/kdenlive-24.12.3-x86_64.AppImage"
+alias kdenlive="$HOME/Documents/kdenlive/kdenlive-25.12.0-B-x86_64.AppImage"
 alias webstorm="$HOME/WebStorm-213.6777.57/bin/webstorm.sh"
 # below will allow to play youtube videos in 720p (change format to 18 for 360p)
 alias ympv="mpv --script-opts=ytdl_hook-ytdl_path=/usr/bin/yt-dlp --ytdl-format=22"
@@ -175,7 +178,9 @@ alias p="podcast"
 alias augustus="$HOME/.local/share/Steam/steamapps/common/Caesar\ 3/C3/augustus.AppImage"
 alias n="nitrogen --restore &"
 alias godot="~/bin/godot/godot.x86_64"
-alias develop="code meetingpal;code meetingpal-api;code meetingpal-fe"
+alias develop="code meetingpal-models;code meetingpal-api;code meetingpal-fe;code meetingpal;"
+alias v="~/Documents/Code/v/v"
+alias session="~/bin/session.AppImage"
 
 # replace "code ," with "code ."
 code() {
@@ -194,7 +199,6 @@ export CHROME_EXECUTABLE=/usr/bin/chromium
 export PATH="$HOME/bin:$PATH"
 export PATH=$HOME/.meteor:$PATH
 export PATH=$PATH:~/.local/bin
-
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
@@ -207,8 +211,8 @@ export PATH="$PATH":"$HOME/.cargo/bin/"
 export PATH="$PATH:$HOME/.lmstudio/bin"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-xset -dpms
-xset s off
+# xset -dpms
+# xset s off
 
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
@@ -217,3 +221,18 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+# . "$HOME/.cargo/env"
+export EDITOR=fresh
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+# opencode
+export PATH=/home/netsu/.opencode/bin:$PATH
+
+alias aichat="open-webui serve --port 5555"
+alias goon="aichat & ai & comfyai &"
+
+alias clearswap="sudo swapoff -a && sudo swapon -a"
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/netsu/.lmstudio/bin"
+# End of LM Studio CLI section
+
