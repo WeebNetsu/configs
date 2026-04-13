@@ -19,6 +19,7 @@
 		"cpu",
 		"memory",
 		"temperature",
+		"tray",
 		"clock",
 	],
 	// Modules configuration
