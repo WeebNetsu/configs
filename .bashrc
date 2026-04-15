@@ -2,27 +2,8 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-export anime="cd $HOME/Documents/Anime/"
 export code="cd $HOME/Documents/Code/"
-export cpp="cd $HOME/Documents/Code/C++"
-export cppfun="cd $HOME/Documents/Code/C++/Fun"
-export nim="cd $HOME/Documents/Code/Nim"
-export nimfun="cd $HOME/Documents/Code/Nim/FUN"
-export js="cd $HOME/Documents/Code/HTML-CSS-JS/JavaScript"
-export jslib="cd $HOME/Documents/Code/HTML-CSS-JS/JavaScript/Libraries"
-export py="cd $HOME/Documents/Code/Python"
-export pylib="cd $HOME/Documents/Code/Python/Libraries"
-export pyfun="cd $HOME/Documents/Code/Python/Fun"
-export lua="cd $HOME/Documents/Code/Lua"
-export luafun="cd $HOME/Documents/Code/Lua/Fun"
-export web="cd $HOME/Documents/Code/HTML-CSS-JS/Webpages"
-export yt="cd $HOME/Documents/YouTube"
-export windows="cd /mnt/9A46DF2646DF0245/Users/onefa/Documents/"
-export win="cd /mnt/9A46DF2646DF0245/Users/onefa/Documents/"
 export work="cd $HOME/Documents/Work"   
-export goles="cd $HOME/Documents/Code/Go/lessons/src/githib.com/weebnetsu"
-export go="cd $HOME/Documents/Code/Go"
-export flutter="cd $HOME/Documents/Code/Dart/Flutter/FUN/"
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -135,52 +116,25 @@ date
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.nimble/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
-export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:$HOME/.cache/paru/clone/distrobox/pkg/distrobox/usr/bin
-export PATH=$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin
-export PATH=$PATH:$HOME/Documents/fluttersdk/flutter
 export PATH=$PATH:$HOME/.npm-global/bin
 
-alias startdroidcam="sudo $HOME/android-sdk/platform-tools/adb start-server && sudo modprobe v4l2loopback"
+# alias startdroidcam="sudo $HOME/android-sdk/platform-tools/adb start-server && sudo modprobe v4l2loopback"
 alias img=sxiv
-alias restartpanel="tint2 &"
 alias imgai="~/bin/easy-diffusion/start.sh"
 alias comfyai="comfy launch"
-alias ai="~/bin/LM-Studio.AppImage"
-alias cinny="~/bin/cinny.AppImage"
 alias mplayer='mplayer -lavdopts threads=4 -aspect 16:9'
-alias dj='python manage.py'
-alias cpile='g++ main.cpp -o output && ./output'
-alias frun='export FLASK_DEBUG=true && flask run'
-alias workblock="export NODE_ENV=test && export PORT=5000 && nodemon"
-alias macos="docker start strange_newton"
-alias kdenlive="$HOME/Documents/kdenlive/kdenlive-25.12.0-B-x86_64.AppImage"
-alias webstorm="$HOME/WebStorm-213.6777.57/bin/webstorm.sh"
 # below will allow to play youtube videos in 720p (change format to 18 for 360p)
 alias ympv="mpv --script-opts=ytdl_hook-ytdl_path=/usr/bin/yt-dlp --ytdl-format=22"
-alias singlemonitor="xrandr --output DVI-I-0 --off --output DVI-I-1 --off --output HDMI-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-0 --off --output DP-1 --off --output DP-2 --off --output DP-3 --off --output DP-4 --off --output DP-5 --off"
-alias multimonitor="xrandr --output DisplayPort-0 --mode 1360x768 --pos 1920x312 --rotate normal --output HDMI-A-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-A-1 --off --output HDMI-A-2 --off"
-alias fixperms="chmod 755 *"
-alias fast="uvicorn main:app --reload"
-alias bottle="flatpak run com.usebottles.bottles"
-alias startvirt="sudo virsh net-start default"
+# alias startvirt="sudo virsh net-start default"
 alias refresh="source ~/.bashrc"
-alias venvstart="source venv/bin/activate"
-alias intellij="~/bin/idea-IC-222.4345.14/bin/idea.sh"
-alias idea="~/bin/idea-IC-222.4345.14/bin/idea.sh"
-alias dubuntu="distrobox enter --root ubuntu"
+# alias venvstart="source venv/bin/activate"
+
 alias code.="code ."
 alias c="code ."
 alias fbuild="flutter clean && flutter pub get && flutter build apk --release"
-alias mine="sudo ~/bin/xmrig/xmrig"
+# alias mine="sudo ~/bin/xmrig/xmrig"
 alias podcast="~/bin/obsidian.AppImage"
 alias p="podcast"
-alias augustus="$HOME/.local/share/Steam/steamapps/common/Caesar\ 3/C3/augustus.AppImage"
-alias n="nitrogen --restore &"
-alias godot="~/bin/godot/godot.x86_64"
-alias develop="code meetingpal-models;code meetingpal-api;code meetingpal-fe;code meetingpal;"
-alias v="~/Documents/Code/v/v"
-alias session="~/bin/session.AppImage"
 
 # replace "code ," with "code ."
 code() {
@@ -211,9 +165,6 @@ export PATH="$PATH":"$HOME/.cargo/bin/"
 export PATH="$PATH:$HOME/.lmstudio/bin"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# xset -dpms
-# xset s off
-
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
 case ":$PATH:" in
@@ -229,7 +180,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH=/home/netsu/.opencode/bin:$PATH
 
 alias aichat="open-webui serve --port 5555"
-alias goon="aichat & ai & comfyai &"
+alias goon="aichat & comfyai &"
 
 alias clearswap="sudo swapoff -a && sudo swapon -a"
 # Added by LM Studio CLI (lms)
