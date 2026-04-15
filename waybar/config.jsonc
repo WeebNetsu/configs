@@ -16,6 +16,7 @@
 	"modules-right": [
 		"pulseaudio",
 		"network",
+		"disk",
 		"cpu",
 		"memory",
 		"temperature",
@@ -39,6 +40,11 @@
 	//         "default": ""
 	//     }
 	// },
+	"disk": {
+		"interval": 30,
+		"format": "{free}",
+		"path": "/", // Use / for your main drive or /home for your home partition
+	},
 	"keyboard-state": {
 		"numlock": true,
 		"capslock": true,
@@ -102,6 +108,7 @@
 	"clock": {
 		// "timezone": "America/New_York",
 		// "tooltip-format": "<big>{:%Y-%m-%d}</big>\n<tt><small>{calendar}</small></tt>",
+		"format": "{:%H:%M %a %d %b %Y}",
 		"format-alt": "{:%H:%M %d-%m-%Y}",
 		"tooltip": false,
 	},
@@ -165,7 +172,7 @@
 	},
 	"pulseaudio": {
 		// "scroll-step": 1, // %, can be a float
-		"format": "{volume}% {format_source}",
+		"format": "Vol {volume}%",
 		"format-bluetooth": "{volume}% {icon} {format_source}",
 		"format-bluetooth-muted": "{icon} {format_source}",
 		"format-muted": "{format_source}",
