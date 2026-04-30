@@ -135,6 +135,7 @@ alias fbuild="flutter clean && flutter pub get && flutter build apk --release"
 # alias mine="sudo ~/bin/xmrig/xmrig"
 alias podcast="~/bin/obsidian.AppImage"
 alias p="podcast"
+alias backup="rclone sync ~/Documents/LinuxMintInstalls pc-backup:pc-backup/LinuxMintInstalls"
 
 # replace "code ," with "code ."
 code() {
