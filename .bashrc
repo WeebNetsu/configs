@@ -117,6 +117,7 @@ export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.nimble/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH=$PATH:$HOME/.npm-global/bin
+# export PATH="$HOME/flutter/bin:$PATH"
 
 # alias startdroidcam="sudo $HOME/android-sdk/platform-tools/adb start-server && sudo modprobe v4l2loopback"
 alias img=sxiv
