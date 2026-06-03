@@ -12,6 +12,7 @@
 	// 	"sway/scratchpad",
 	// 	"custom/media",
 	// ],
+	"monitor": "DP-1",
 	"modules-center": ["sway/window"],
 	"modules-right": [
 		"pulseaudio",
