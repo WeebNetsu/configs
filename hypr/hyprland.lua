@@ -1,25 +1,3 @@
---[[
-todo:
-scrolling is wack yo
-bind = $mainMod, R, submap, resize -> resize werk met muis maar nog nie met die
-bind = $mainMod, J, layoutmsg, togglesplit # dwindle -> idk what this is, so skipped
-
-windowrule {
-    # Fix some dragging issues with XWayland
-    name = fix-xwayland-drags
-    match:class = ^$
-    match:title = ^$
-    match:xwayland = true
-    match:float = true
-    match:fullscreen = false
-    match:pin = false
-
-    no_focus = true
-}
-Skipping whole section, if we get dragging issues, add it
-]]
-
-
 local terminal = "xfce4-terminal"
 local fileManager = "nemo"
 local menu = "rofi -show drun -theme ~/.config/rofi/launchers/type-2/style-1.rasi"
@@ -80,36 +58,6 @@ hl.config({
         }
     },
 
-    animations = {
-        enabled = true,
-        bezier = {
-            "easeOutQuint,   0.23, 1,    0.32, 1",
-            "easeInOutCubic, 0.65, 0.05, 0.36, 1",
-            "linear,         0,    0,    1,    1",
-            "almostLinear,   0.5,  0.5,  0.75, 1",
-            "quick,          0.15, 0,    0.1,  1"
-        },
-        animation = {
-            "global,        1,     10,    default",
-            "border,        1,     5.39,  easeOutQuint",
-            "windows,       1,     4.79,  easeOutQuint",
-            "windowsIn,     1,     4.1,   easeOutQuint, popin 87%",
-            "windowsOut,    1,     1.49,  linear,       popin 87%",
-            "fadeIn,        1,     1.73,  almostLinear",
-            "fadeOut,       1,     1.46,  almostLinear",
-            "fade,          1,     3.03,  quick",
-            "layers,        1,     3.81,  easeOutQuint",
-            "layersIn,      1,     4,     easeOutQuint, fade",
-            "layersOut,     1,     1.5,   linear,       fade",
-            "fadeLayersIn,  1,     1.79,  almostLinear",
-            "fadeLayersOut, 1,     1.39,  almostLinear",
-            "workspaces,    1,     1.94,  almostLinear, fade",
-            "workspacesIn,  1,     1.21,  almostLinear, fade",
-            "workspacesOut, 1,     1.94,  almostLinear, fade",
-            "zoomFactor,    1,     7,     quick"
-        }
-    },
-
     dwindle = {
         preserve_split = true
     },
@@ -145,7 +93,7 @@ hl.config({
 
     cursor = {
         no_hardware_cursors = false,
-        enable_hyprcursor = true
+        enable_hyprcursor = false
     },
 
     scrolling = {
@@ -158,6 +106,34 @@ hl.config({
 -- ENVIRONMENT VARIABLES
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
+
+-- Default curves and animations, see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Animations/
+hl.curve("easeOutQuint", { type = "bezier", points = { { 0.23, 1 }, { 0.32, 1 } } })
+hl.curve("easeInOutCubic", { type = "bezier", points = { { 0.65, 0.05 }, { 0.36, 1 } } })
+hl.curve("linear", { type = "bezier", points = { { 0, 0 }, { 1, 1 } } })
+hl.curve("almostLinear", { type = "bezier", points = { { 0.5, 0.5 }, { 0.75, 1 } } })
+hl.curve("quick", { type = "bezier", points = { { 0.15, 0 }, { 0.1, 1 } } })
+
+-- Default springs
+hl.curve("easy", { type = "spring", mass = 1, stiffness = 238.1191, dampening = 24.21279333 })
+
+hl.animation({ leaf = "global", enabled = true, speed = 10, bezier = "default" })
+hl.animation({ leaf = "border", enabled = true, speed = 5.39, bezier = "easeOutQuint" })
+hl.animation({ leaf = "windows", enabled = true, speed = 4.79, bezier = "easeOutQuint" })
+hl.animation({ leaf = "windowsIn", enabled = true, speed = 4.1, bezier = "easeOutQuint", })
+hl.animation({ leaf = "windowsOut", enabled = true, speed = 4.49, bezier = "easeOutQuint", })
+hl.animation({ leaf = "fadeIn", enabled = true, speed = 1.73, bezier = "almostLinear" })
+hl.animation({ leaf = "fadeOut", enabled = true, speed = 1.46, bezier = "almostLinear" })
+hl.animation({ leaf = "fade", enabled = true, speed = 3.03, bezier = "quick" })
+hl.animation({ leaf = "layers", enabled = true, speed = 3.81, bezier = "easeOutQuint" })
+hl.animation({ leaf = "layersIn", enabled = true, speed = 4, bezier = "easeOutQuint", style = "fade" })
+hl.animation({ leaf = "layersOut", enabled = true, speed = 1.5, bezier = "linear", style = "fade" })
+hl.animation({ leaf = "fadeLayersIn", enabled = true, speed = 1.79, bezier = "almostLinear" })
+hl.animation({ leaf = "fadeLayersOut", enabled = true, speed = 1.39, bezier = "almostLinear" })
+hl.animation({ leaf = "workspaces", enabled = true, speed = 1.94, bezier = "almostLinear", style = "fade" })
+hl.animation({ leaf = "workspacesIn", enabled = true, speed = 1.21, bezier = "almostLinear", style = "fade" })
+hl.animation({ leaf = "workspacesOut", enabled = true, speed = 1.94, bezier = "almostLinear", style = "fade" })
+hl.animation({ leaf = "zoomFactor", enabled = true, speed = 7, bezier = "quick" })
 
 hl.window_rule({
     name = "suppress-maximize-events",
