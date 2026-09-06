@@ -168,9 +168,8 @@ closeWindowBind:set_enabled(true)
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("brave"))
--- Color picker
-hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("hyprpicker -a"))
-hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("subl"))
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("hyprpicker -a")) -- Color picker
+hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("codium"))
 hl.bind(mainMod .. " + K", hl.dsp.exec_cmd("firefox"))
 hl.bind(mainMod .. " + SHIFT + SPACE", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("hyprctl reload"))
